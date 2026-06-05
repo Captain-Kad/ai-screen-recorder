@@ -18,8 +18,8 @@ function App() {
         body: JSON.stringify({ command })
       })
       const data = await response.json()
-      setStatus(`Server received: "${data.command}"`)
-    } catch (error) {
+      setStatus(`Status: ${data.status} — file: ${data.filename || ''}`)
+    } catch {
       setStatus('Error: could not reach the server')
     } finally {
       setLoading(false)
